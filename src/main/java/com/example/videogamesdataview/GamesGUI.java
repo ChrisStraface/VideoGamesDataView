@@ -8,15 +8,20 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class GamesGUI extends Application {
+    GamesController myController;
     @Override
     public void start(Stage stage) throws IOException {
+
         FXMLLoader fxmlLoader = new FXMLLoader(GamesGUI.class.getResource("GamesGUI.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 984, 470);
+        Scene scene = new Scene(fxmlLoader.load(), 787, 520);
+        myController = fxmlLoader.getController();
         stage.setTitle("Game Sales Table");
         stage.setScene(scene);
         stage.show();
     }
-
+    public void stop() throws Exception {
+        myController.saveData();
+    }
     public static void main(String[] args) {
         launch();
     }
