@@ -13,7 +13,7 @@ public class GamesGUI extends Application {
     public void start(Stage stage) throws IOException {
 
         FXMLLoader fxmlLoader = new FXMLLoader(GamesGUI.class.getResource("GamesGUI.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 787, 520);
+        Scene scene = new Scene(fxmlLoader.load(), 807, 520);
         myController = fxmlLoader.getController();
         stage.setTitle("Game Sales Table");
         stage.setScene(scene);

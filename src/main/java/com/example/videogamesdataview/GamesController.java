@@ -105,19 +105,15 @@ public class GamesController {
     }
     public void enterButton() {
     String TitleRow = TitleField.getText();
-    SalesTable.getItems().add(TitleRow);
     String PlatformRow = PlatformField.getText();
-    SalesTable.getItems().add(PlatformRow);
     String DateRow = DateField.getText();
-    SalesTable.getItems().add(DateRow);
     String DeveloperRow = DeveloperField.getText();
-    SalesTable.getItems().add(DeveloperRow);
     String SeriesRow = SeriesField.getText();
-    SalesTable.getItems().add(SeriesRow);
     String PublisherRow = PublisherField.getText();
-    SalesTable.getItems().add(PublisherRow);
-    String SalesRow = SalesField.getText();
-    SalesTable.getItems().add(SalesRow);
+    int SalesRow = Integer.parseInt(SalesField.getText());
+
+    VideogamesSells extraVideoGame = new VideogamesSells(TitleRow, PlatformRow, DateRow, DeveloperRow, PublisherRow, SeriesRow, SalesRow);
+    SalesTable.getItems().add(extraVideoGame);
     }
     public void saveData() throws Exception {
         FileOutputStream fileOut = new FileOutputStream("SavedFilmObjects");
